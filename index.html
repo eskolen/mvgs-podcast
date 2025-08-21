@@ -6,16 +6,7 @@
     <title>MVGS Podcast - Work Access</title>
     <meta name="description" content="Access MVGS Podcast from work networks">
     
-    <!-- Immediate redirect for users -->
-    <script>
-        // Redirect to your actual podcast server
-        setTimeout(() => {
-            window.location.href = 'https://mvgs.duckdns.org/podcast/';
-        }, 3000);
-    </script>
-    
-    <!-- Fallback meta refresh -->
-    <meta http-equiv="refresh" content="5;url=https://mvgs.duckdns.org/podcast/">
+    <!-- NO AUTOMATIC REDIRECT - Manual access only for work networks -->
     
     <style>
         body {
@@ -165,9 +156,8 @@
         
         <div class="redirect-info">
             <div class="loading">
-                <div class="spinner"></div>
-                <strong>Redirecting to podcast...</strong>
-                <p>This page helps you access the MVGS Podcast from restricted networks.</p>
+                <strong>🔓 Work-Friendly Access Portal</strong>
+                <p>This page helps you access the MVGS Podcast from restricted networks without automatic redirects.</p>
             </div>
         </div>
         
@@ -242,29 +232,34 @@
             }
         }
         
-        // Test connection to main server
+        // Test connection to main server (NO AUTO-REDIRECT)
         function testConnection() {
             const statusElement = document.getElementById('connection-status');
             
             // Try to load an image from your server (small request)
             const img = new Image();
             img.onload = function() {
-                statusElement.innerHTML = '✅ Main server accessible! Redirecting...';
+                statusElement.innerHTML = '✅ Main server accessible! Use links below to access.';
                 statusElement.style.color = '#4caf50';
                 
-                // If connection works, redirect faster
-                setTimeout(() => {
-                    window.location.href = 'https://mvgs.duckdns.org/podcast/';
-                }, 1000);
+                // Make the main site button more prominent
+                const mainButton = document.querySelector('.link-button[href*="mvgs.duckdns.org/podcast/"]');
+                if (mainButton) {
+                    mainButton.style.background = 'rgba(76, 175, 80, 0.4)';
+                    mainButton.innerHTML = '🏠 Main Site ✅ ACCESSIBLE';
+                }
             };
             
             img.onerror = function() {
-                statusElement.innerHTML = '❌ Main server blocked. Use manual links below.';
+                statusElement.innerHTML = '❌ Main server blocked. Use alternative access methods below.';
                 statusElement.style.color = '#ff6b6b';
                 
-                // Stop the spinner
-                document.querySelector('.spinner').style.display = 'none';
-                document.querySelector('.loading strong').innerHTML = 'Connection blocked - use manual access';
+                // Highlight alternative options
+                const rssButton = document.querySelector('.link-button[href*="rss.xml"]');
+                if (rssButton) {
+                    rssButton.style.background = 'rgba(255, 193, 7, 0.4)';
+                    rssButton.innerHTML = '📡 RSS Feed (Try This!)';
+                }
             };
             
             // Test with a small image or favicon

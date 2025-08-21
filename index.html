@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podcaster fra Mysen VGS - Work Access</title>
+    <link rel="alternate" type="application/rss+xml" title="MVGS Podcast" href="./rss.xml">
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; margin: 40px; background: #f5f5f5; }
+        .container { max-width: 800px; margin: 0 auto; background: white; padding: 40px; border-radius: 10px; }
+        .header { text-align: center; margin-bottom: 30px; }
+        .rss-section { background: #e3f2fd; padding: 20px; border-radius: 8px; margin: 20px 0; }
+        .rss-url { background: white; padding: 10px; border-radius: 4px; font-family: monospace; word-break: break-all; margin: 10px 0; }
+        .copy-btn { background: #2196f3; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; }
+        .episodes { margin: 20px 0; }
+        .episode { border-bottom: 1px solid #eee; padding: 15px 0; }
+        .episode:last-child { border-bottom: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎧 INDIREKTE - en podcast fra Mysen vgs</h1>
+            <p>Perspektiver på skole, læring og samfunn</p>
+        </div>
+        
+        <div class="rss-section">
+            <h3>📡 RSS Feed</h3>
+            <p>Copy this URL for your podcast app:</p>
+            <div class="rss-url" id="rss-url">https://eskolen.github.io/mvgs-podcast/rss.xml</div>
+            <button class="copy-btn" onclick="copyRSS()">📋 Copy RSS URL</button>
+        </div>
+        
+        <div class="episodes" id="episode-list">
+            <h3>📻 Episodes</h3>
+            <p>Loading episodes...</p>
+        </div>
+    </div>
+    
+    <script>
+        function copyRSS() {
+            const url = document.getElementById('rss-url').textContent;
+            navigator.clipboard.writeText(url).then(() => {
+                event.target.textContent = '✅ Copied!';
+                setTimeout(() => { event.target.textContent = '📋 Copy RSS URL'; }, 2000);
+            });
+        }
+        
+        fetch('./episodes.json')
+            .then(r => r.json())
+            .then(episodes => {
+                const list = document.getElementById('episode-list');
+                list.innerHTML = '<h3>📻 Episodes</h3>' + 
+                    episodes.map(ep => `
+                        <div class="episode">
+                            <h4>${ep.title}</h4>
+                            <p>📅 ${ep.formatted_date} • ⏱️ ${ep.duration} • 💾 ${ep.size_mb} MB</p>
+                            ${ep.description ? `<p>${ep.description_html}</p>` : ''}
+                            <audio controls style="width: 100%; margin-top: 10px;">
+                                <source src="${ep.audio_url}" type="audio/mpeg">
+                            </audio>
+                        </div>
+                    `).join('');
+            })
+            .catch(() => {
+                document.getElementById('episode-list').innerHTML = 
+                    '<h3>📻 Episodes</h3><p>Episodes available via RSS feed above.</p>';
+            });
+    </script>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>Podcaster fra Mysen VGS (Work Access)</title>
+    <link>https://eskolen.github.io/mvgs-podcast</link>
+    <description>Perspektiver på skole og læring fra Mysen videregående skole</description>
+    <atom:link href="https://eskolen.github.io/mvgs-podcast/rss.xml" rel="self" type="application/rss+xml"/>
+    <language>no</language>
+    <copyright>© 2025 Mysen VGS</copyright>
+    <managingEditor>podcast@mysen.vgs.no (Mysen VGS)</managingEditor>
+    <webMaster>podcast@mysen.vgs.no (Mysen VGS)</webMaster>
+    <lastBuildDate>Thu, 21 Aug 2025 14:19:55 +0000</lastBuildDate>
+    <generator>Clean RSS Generator v1.0</generator>
+    <itunes:author>Mysen VGS</itunes:author>
+    <itunes:summary>Perspektiver på skole og læring fra Mysen videregående skole</itunes:summary>
+    <itunes:subtitle>Skole og læring</itunes:subtitle>
+    <itunes:explicit>false</itunes:explicit>
+    <itunes:owner>
+      <itunes:name>Mysen VGS</itunes:name>
+      <itunes:email>podcast@mysen.vgs.no</itunes:email>
+    </itunes:owner>
+    <itunes:category text="Education"/>
+    <itunes:image href="https://mvgs.duckdns.org/podcast/images/cover.jpg"/>
+    <image>
+      <url>https://mvgs.duckdns.org/podcast/images/cover.jpg</url>
+      <title>Podcaster fra Mysen VGS (Work Access)</title>
+      <link>https://eskolen.github.io/mvgs-podcast</link>
+    </image>
+    <item>
+      <title>07 Organiseringen av IKO-arbeidet ved Mysen vgs.</title>
+      <description>Denne episoden gir oversikt over hovedtrekk ved IKO-arbeidet ved skolen, og er basert på beskrivelsen av dette som kan leses i lenken under. Podcasten er laget ved hjelp av **NotebookLM** og feil kan forekomme.
+**Lenker:**
+NotebookLM:
+https://notebooklm.google/
+Lenke til dokumentet(obs - krever tilgang som ansatt):
+https://bit.ly/IKO_arbeidet
+**Kontaktinfo:**
+Mysen VGS: https://ofk.no/mysen-vgs/
+Epost: eivindsl@ofk.no
+#podcast #education #mysenvgs</description>
+      <link>https://eskolen.github.io/mvgs-podcast</link>
+      <guid isPermaLink="false">https://eskolen.github.io/mvgs-podcast/episode/07_Organiseringen_av_IKO-arbeidet.mp3</guid>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <enclosure url="https://mvgs.duckdns.org/podcast/episodes/07_Organiseringen_av_IKO-arbeidet.mp3" length="5418626" type="audio/mpeg"/>
+      <itunes:author>Mysen VGS</itunes:author>
+      <itunes:duration>05:00</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://mvgs.duckdns.org/podcast/images/07_Organiseringen_av_IKO-arbeidet.jpg"/>
+    </item>
+    <item>
+      <title>06 - Hjernebølgeaktivitet, skriving og AI (OBS: avventer fagfellevurdering)</title>
+      <description>Denne episoden er basert på forskning fra MIT Media LAB. Oppgaven kan leses i sin helhet ved å følge lenken under. Podcasten er laget ved hjelp av **NotebookLM** og feil kan forekomme.
+**Lenker:**
+NotebookLM:
+https://notebooklm.google/
+Lenke til dokumentet:
+https://arxiv.org/pdf/2506.08872v1
+Forbehold før fagfellevurderingen og forskning videre:
+https://www.brainonllm.com/
+**Kontaktinfo:**
+Mysen VGS: https://ofk.no/mysen-vgs/
+Epost: eivindsl@ofk.no
+#podcast #education #mysenvgs</description>
+      <link>https://eskolen.github.io/mvgs-podcast</link>
+      <guid isPermaLink="false">https://eskolen.github.io/mvgs-podcast/episode/06_Hjerneb%C3%B8lgeaktivitet_skriving_og_AI.mp3</guid>
+      <pubDate>Wed, 18 Jun 2025 00:00:00 +0000</pubDate>
+      <enclosure url="https://mvgs.duckdns.org/podcast/episodes/06_Hjerneb%C3%B8lgeaktivitet_skriving_og_AI.mp3" length="4673265" type="audio/mpeg"/>
+      <itunes:author>Mysen VGS</itunes:author>
+      <itunes:duration>04:00</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://mvgs.duckdns.org/podcast/images/06_Hjerneb%C3%B8lgeaktivitet_skriving_og_AI.jpg"/>
+    </item>
+    <item>
+      <title>05 - Elevmotivasjon - hva kan vi lærere gjøre?</title>
+      <description>Denne episoden er basert forskningen til Ella Bjerga Pettersen i artikkelen under, samt de to tilhørende forskningsartiklene som er viderelenket derfra. Podcasten er laget ved hjelp av **NotebookLM** og feil kan forekomme.
+**Lenker:**
+NotebookLM:
+https://notebooklm.google/
+Lenke til dokumentet:
+https://bit.ly/elevmotivasjon
+**Kontaktinfo:**
+Mysen VGS: https://ofk.no/mysen-vgs/
+Epost: eivindsl@ofk.no
+#podcast #education #mysenvgs</description>
+      <link>https://eskolen.github.io/mvgs-podcast</link>
+      <guid isPermaLink="false">https://eskolen.github.io/mvgs-podcast/episode/05_elevmotivasjon.mp3</guid>
+      <pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate>
+      <enclosure url="https://mvgs.duckdns.org/podcast/episodes/05_elevmotivasjon.mp3" length="3292062" type="audio/mpeg"/>
+      <itunes:author>Mysen VGS</itunes:author>
+      <itunes:duration>03:00</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://mvgs.duckdns.org/podcast/images/05_elevmotivasjon.jpg"/>
+    </item>
+    <item>
+      <title>04 - 13 år med norsk</title>
+      <description>Denne episoden er basert på en rekke gruppesamtaler i avgangsklasse 3STC ved Mysen vgs. Podcasten er laget ved hjelp av **NotebookLM** og feil kan forekomme.
+**Lenker:**
+NotebookLM:
+https://notebooklm.google/
+**Kontaktinfo:**
+Mysen VGS: https://ofk.no/mysen-vgs/
+Epost: eivindsl@ofk.no
+#podcast #education #mysenvgs</description>
+      <link>https://eskolen.github.io/mvgs-podcast</link>
+      <guid isPermaLink="false">https://eskolen.github.io/mvgs-podcast/episode/04_13_%C3%A5r_med_norskfaget.mp3</guid>
+      <pubDate>Tue, 03 Jun 2025 00:00:00 +0000</pubDate>
+      <enclosure url="https://mvgs.duckdns.org/podcast/episodes/04_13_%C3%A5r_med_norskfaget.mp3" length="3240946" type="audio/mpeg"/>
+      <itunes:author>Mysen VGS</itunes:author>
+      <itunes:duration>03:00</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://mvgs.duckdns.org/podcast/images/04_13_%C3%A5r_med_norskfaget.jpg"/>
+    </item>
+    <item>
+      <title>03 - Evaluering av skolens utviklingsmål 24/25</title>
+      <description>Denne episoden er basert på relevante dokumenter i mappen &quot;Evaluering av utviklingsarbeid&quot; i filarkivet vårt. Podcasten er laget ved hjelp av **NotebookLM** og feil kan forekomme.
+**Lenker:**
+NotebookLM:
+https://notebooklm.google/
+Lenke til dokumentet (krever at du er ansatt ved skolen):
+https://bit.ly/utvikling2425
+**Kontaktinfo:**
+Mysen VGS: https://ofk.no/mysen-vgs/
+Epost: eivindsl@ofk.no
+#podcast #education #mysenvgs</description>
+      <link>https://eskolen.github.io/mvgs-podcast</link>
+      <guid isPermaLink="false">https://eskolen.github.io/mvgs-podcast/episode/03_evaluering_skoleutvikling_24_25.mp3</guid>
+      <pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate>
+      <enclosure url="https://mvgs.duckdns.org/podcast/episodes/03_evaluering_skoleutvikling_24_25.mp3" length="4224805" type="audio/mpeg"/>
+      <itunes:author>Mysen VGS</itunes:author>
+      <itunes:duration>04:00</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://mvgs.duckdns.org/podcast/images/03_evaluering_skoleutvikling_24_25.jpg"/>
+    </item>
+    <item>
+      <title>02 - Vurderingspraksis ved Mysen vgs</title>
+      <description>Denne episoden er basert på dokumentet &quot;VURDERING PÅ MYSEN VGS 2024&quot; i filarkivet vårt. Podcasten er laget ved hjelp av **NotebookLM** og feil kan forekomme.
+**Lenker:**
+NotebookLM:
+https://notebooklm.google/
+Lenke til dokumentet (krever at du er ansatt ved skolen):
+https://bit.ly/vurdering2024
+**Kontaktinfo:**
+Mysen VGS: https://ofk.no/mysen-vgs/
+Epost: eivindsl@ofk.no
+#podcast #education #mysenvgs</description>
+      <link>https://eskolen.github.io/mvgs-podcast</link>
+      <guid isPermaLink="false">https://eskolen.github.io/mvgs-podcast/episode/02_vurdering_ved_Mysen_vgs.mp3</guid>
+      <pubDate>Mon, 26 May 2025 00:00:00 +0000</pubDate>
+      <enclosure url="https://mvgs.duckdns.org/podcast/episodes/02_vurdering_ved_Mysen_vgs.mp3" length="3531951" type="audio/mpeg"/>
+      <itunes:author>Mysen VGS</itunes:author>
+      <itunes:duration>03:00</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://mvgs.duckdns.org/podcast/images/02_vurdering_ved_Mysen_vgs.jpg"/>
+    </item>
+    <item>
+      <title>01 - Grunnlaget for vår pedagogiske praksis</title>
+      <description>Denne episoden er basert på dokumentet &quot;Kompendium pedagogisk grunnsyn&quot; i filarkivet vårt. Podcasten er laget ved hjelp av **NotebookLM** og feil kan forekomme.
+**Lenker:**
+NotebookLM:
+https://notebooklm.google/
+Lenke til dokumentet (krever at du er ansatt ved skolen):
+https://bit.ly/pedkomp
+**Kontaktinfo:**
+Mysen VGS: https://ofk.no/mysen-vgs/
+Epost: eivindsl@ofk.no
+#podcast #education #mysenvgs</description>
+      <link>https://eskolen.github.io/mvgs-podcast</link>
+      <guid isPermaLink="false">https://eskolen.github.io/mvgs-podcast/episode/01_pedagogisk_kompendium.mp3</guid>
+      <pubDate>Sun, 25 May 2025 00:00:00 +0000</pubDate>
+      <enclosure url="https://mvgs.duckdns.org/podcast/episodes/01_pedagogisk_kompendium.mp3" length="3989842" type="audio/mpeg"/>
+      <itunes:author>Mysen VGS</itunes:author>
+      <itunes:duration>03:00</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://mvgs.duckdns.org/podcast/images/01_pedagogisk_kompendium.jpg"/>
+    </item>
+  </channel>
+</rss>

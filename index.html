@@ -6,7 +6,7 @@
     <title>MVGS Podcast - Work Access</title>
     <meta name="description" content="Access MVGS Podcast from work networks">
     
-    <!-- NO AUTOMATIC REDIRECT - Manual access only for work networks -->
+    <!-- NO REDIRECTS OR EXTERNAL LINKS -->
     
     <style>
         body {
@@ -48,34 +48,11 @@
             opacity: 0.9;
         }
         
-        .redirect-info {
+        .info-section {
             background: rgba(255,255,255,0.2);
             padding: 20px;
             border-radius: 10px;
             margin: 20px 0;
-        }
-        
-        .manual-links {
-            margin: 30px 0;
-        }
-        
-        .link-button {
-            display: inline-block;
-            background: rgba(255,255,255,0.3);
-            color: white;
-            padding: 15px 30px;
-            margin: 10px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            border: 2px solid rgba(255,255,255,0.5);
-        }
-        
-        .link-button:hover {
-            background: rgba(255,255,255,0.5);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
         
         .rss-section {
@@ -85,66 +62,70 @@
             margin: 20px 0;
         }
         
-        .rss-url {
+        .domain-url {
             background: rgba(255,255,255,0.2);
-            padding: 10px;
+            padding: 15px;
             border-radius: 5px;
             font-family: monospace;
             word-break: break-all;
             margin: 10px 0;
             cursor: pointer;
             border: 1px solid rgba(255,255,255,0.3);
+            font-size: 14px;
         }
         
-        .rss-url:hover {
+        .domain-url:hover {
             background: rgba(255,255,255,0.3);
         }
         
-        .loading {
-            font-size: 1.1em;
-            margin: 20px 0;
+        .copy-btn {
+            background: rgba(76, 175, 80, 0.3);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            margin: 5px;
+            font-weight: bold;
+            border: 2px solid rgba(255,255,255,0.3);
         }
         
-        .spinner {
-            border: 3px solid rgba(255,255,255,0.3);
-            border-top: 3px solid white;
-            border-radius: 50%;
-            width: 30px;
-            height: 30px;
-            animation: spin 1s linear infinite;
-            margin: 20px auto;
+        .copy-btn:hover {
+            background: rgba(76, 175, 80, 0.5);
+            transform: translateY(-1px);
         }
         
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        .troubleshooting {
+        .instructions {
             background: rgba(255,255,255,0.1);
             padding: 20px;
             border-radius: 10px;
             margin: 20px 0;
-            font-size: 0.9em;
+            text-align: left;
         }
         
-        .status-check {
-            margin: 20px 0;
+        .step {
+            background: rgba(255,255,255,0.1);
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border-left: 4px solid #4caf50;
         }
         
-        .status-indicator {
-            display: inline-block;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            margin-right: 8px;
-            background: #ffeb3b;
-            animation: pulse 2s ease-in-out infinite alternate;
+        .warning {
+            background: rgba(255, 193, 7, 0.2);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #ffc107;
         }
         
-        @keyframes pulse {
-            from { opacity: 1; }
-            to { opacity: 0.5; }
+        .success-message {
+            background: rgba(76, 175, 80, 0.3);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #4caf50;
+            display: none;
         }
     </style>
 </head>
@@ -154,125 +135,165 @@
         <h1 class="title">MVGS Podcast</h1>
         <p class="subtitle">Work-Friendly Access Portal</p>
         
-        <div class="redirect-info">
-            <div class="loading">
-                <strong>🔓 Work-Friendly Access Portal</strong>
-                <p>This page helps you access the MVGS Podcast from restricted networks without automatic redirects.</p>
-            </div>
-        </div>
-        
-        <div class="status-check">
-            <p><span class="status-indicator"></span> Checking network accessibility...</p>
-            <p id="connection-status">Attempting connection to main server...</p>
-        </div>
-        
-        <div class="manual-links">
-            <h3>📱 Quick Access Links</h3>
-            <a href="https://mvgs.duckdns.org/podcast/" class="link-button" target="_blank">
-                🏠 Main Site
-            </a>
-            <a href="https://mvgs.duckdns.org/podcast/rss.xml" class="link-button" target="_blank">
-                📡 RSS Feed
-            </a>
+        <div class="info-section">
+            <h3>📻 Listen to MVGS Podcast at Work</h3>
+            <p>This page helps you access the MVGS Podcast from restricted networks by providing RSS feeds that work in podcast apps.</p>
         </div>
         
         <div class="rss-section">
-            <h3>📻 Subscribe to Podcast</h3>
-            <p>Copy this RSS URL into your podcast app:</p>
-            <div class="rss-url" onclick="copyToClipboard(this)" title="Click to copy">
+            <h3>🎯 Primary RSS Feed</h3>
+            <p>Copy this URL and paste it into your podcast app:</p>
+            <div class="domain-url" onclick="copyToClipboard(this, 'primary')" title="Click to copy">
                 https://mvgs.duckdns.org/podcast/rss.xml
             </div>
-            <p><small>Click the URL above to copy it</small></p>
+            <button class="copy-btn" onclick="copyToClipboard(document.querySelector('.domain-url'), 'primary')">
+                📋 Copy Primary RSS
+            </button>
+            <div class="success-message" id="copy-success-primary">
+                ✅ Primary RSS URL copied to clipboard!
+            </div>
         </div>
         
-        <div class="troubleshooting">
-            <h3>🔧 If Links Don't Work</h3>
-            <p><strong>Option 1:</strong> Try accessing from mobile data instead of work WiFi</p>
-            <p><strong>Option 2:</strong> Contact IT about accessing educational content</p>
-            <p><strong>Option 3:</strong> Use a different device/network</p>
-            <p><strong>Option 4:</strong> Download episodes when at home, listen offline at work</p>
+        <div class="warning">
+            <h4>⚠️ If Primary RSS Doesn't Work</h4>
+            <p>Some networks block certain domains. If the primary RSS feed doesn't work in your podcast app, try accessing from:</p>
+            <ul style="text-align: left;">
+                <li>Mobile data instead of work WiFi</li>
+                <li>Home network (download episodes for offline listening)</li>
+                <li>Personal device/hotspot</li>
+            </ul>
         </div>
         
-        <div class="manual-links">
-            <h3>ℹ️ About This Service</h3>
-            <p>This is a mirror access point for the MVGS Podcast, designed to work from corporate and school networks that may block certain domain types.</p>
+        <div class="instructions">
+            <h3>📱 How to Add to Podcast Apps</h3>
+            
+            <div class="step">
+                <strong>Step 1:</strong> Copy the RSS URL above (click the gray box)
+            </div>
+            
+            <div class="step">
+                <strong>Step 2:</strong> Open your podcast app:
+                <ul>
+                    <li>📱 Apple Podcasts: Library → Edit → Add a Show by URL</li>
+                    <li>🎵 Spotify: Search → "Add Podcast by URL" (Premium required)</li>
+                    <li>🎧 Google Podcasts: Search → Add by RSS</li>
+                    <li>📻 Pocket Casts: + → Add Podcast → Paste URL</li>
+                    <li>🔊 Overcast: + → Add URL</li>
+                </ul>
+            </div>
+            
+            <div class="step">
+                <strong>Step 3:</strong> Paste the RSS URL and subscribe
+            </div>
+            
+            <div class="step">
+                <strong>Step 4:</strong> Download episodes for offline listening at work
+            </div>
+        </div>
+        
+        <div class="info-section">
+            <h3>🏫 About MVGS Podcast</h3>
+            <p><strong>INDIREKTE - en podcast fra Mysen vgs</strong></p>
+            <p>Perspektiver på skole, læring og samfunn fra Mysen videregående skole.</p>
+            
+            <h4>📚 Recent Topics Include:</h4>
+            <ul style="text-align: left; margin: 15px 0;">
+                <li>Elevmotivasjon og engasjement</li>
+                <li>Vurdering og tilbakemelding</li>
+                <li>Pedagogisk utvikling</li>
+                <li>Norskfaget i praksis</li>
+                <li>Skoleutvikling</li>
+                <li>AI og teknologi i utdanning</li>
+            </ul>
+        </div>
+        
+        <div class="instructions">
+            <h3>🔧 Troubleshooting</h3>
+            
+            <div class="step">
+                <strong>🚫 "RSS feed not found" error:</strong><br>
+                The podcast server may be blocked by your network. Try accessing from mobile data or home WiFi.
+            </div>
+            
+            <div class="step">
+                <strong>📱 Can't add RSS to podcast app:</strong><br>
+                Some free podcast apps don't support custom RSS feeds. Try a different app from the list above.
+            </div>
+            
+            <div class="step">
+                <strong>🏢 Corporate firewall blocking access:</strong><br>
+                Contact your IT department about accessing educational content, or listen from personal devices/networks.
+            </div>
+            
+            <div class="step">
+                <strong>💡 Best practice for work:</strong><br>
+                Download episodes at home, then listen offline at work to avoid any network restrictions.
+            </div>
+        </div>
+        
+        <div class="info-section">
+            <h3>📖 Access Instructions Summary</h3>
+            <p><strong>For immediate access:</strong> Copy RSS URL → Paste in podcast app → Subscribe → Download episodes</p>
+            <p><strong>Bookmark this page:</strong> https://eskolen.github.io/mvgs-podcast/ for future access</p>
         </div>
     </div>
     
     <script>
-        function copyToClipboard(element) {
-            const text = element.textContent;
+        function copyToClipboard(element, type) {
+            const text = element.textContent.trim();
+            const successElement = document.getElementById(`copy-success-${type}`);
             
             if (navigator.clipboard) {
                 navigator.clipboard.writeText(text).then(() => {
-                    element.style.background = 'rgba(76, 175, 80, 0.3)';
-                    element.innerHTML = '✅ RSS URL Copied!';
+                    // Show success message
+                    successElement.style.display = 'block';
                     
+                    // Update button text
+                    const button = event.target.closest('.rss-section').querySelector('.copy-btn');
+                    const originalText = button.textContent;
+                    button.textContent = '✅ Copied!';
+                    button.style.background = 'rgba(76, 175, 80, 0.5)';
+                    
+                    // Reset after 3 seconds
                     setTimeout(() => {
-                        element.style.background = 'rgba(255,255,255,0.2)';
-                        element.innerHTML = text;
-                    }, 2000);
+                        successElement.style.display = 'none';
+                        button.textContent = originalText;
+                        button.style.background = 'rgba(76, 175, 80, 0.3)';
+                    }, 3000);
+                }).catch(() => {
+                    // Fallback method
+                    fallbackCopy(text, successElement);
                 });
             } else {
                 // Fallback for older browsers
-                const textArea = document.createElement('textarea');
-                textArea.value = text;
-                document.body.appendChild(textArea);
-                textArea.select();
-                document.execCommand('copy');
-                document.body.removeChild(textArea);
-                
-                element.style.background = 'rgba(76, 175, 80, 0.3)';
-                element.innerHTML = '✅ RSS URL Copied!';
-                
-                setTimeout(() => {
-                    element.style.background = 'rgba(255,255,255,0.2)';
-                    element.innerHTML = text;
-                }, 2000);
+                fallbackCopy(text, successElement);
             }
         }
         
-        // Test connection to main server (NO AUTO-REDIRECT)
-        function testConnection() {
-            const statusElement = document.getElementById('connection-status');
+        function fallbackCopy(text, successElement) {
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            textArea.style.position = 'fixed';
+            textArea.style.opacity = '0';
+            document.body.appendChild(textArea);
+            textArea.select();
             
-            // Try to load an image from your server (small request)
-            const img = new Image();
-            img.onload = function() {
-                statusElement.innerHTML = '✅ Main server accessible! Use links below to access.';
-                statusElement.style.color = '#4caf50';
-                
-                // Make the main site button more prominent
-                const mainButton = document.querySelector('.link-button[href*="mvgs.duckdns.org/podcast/"]');
-                if (mainButton) {
-                    mainButton.style.background = 'rgba(76, 175, 80, 0.4)';
-                    mainButton.innerHTML = '🏠 Main Site ✅ ACCESSIBLE';
-                }
-            };
+            try {
+                document.execCommand('copy');
+                successElement.style.display = 'block';
+                setTimeout(() => {
+                    successElement.style.display = 'none';
+                }, 3000);
+            } catch (err) {
+                alert('RSS URL: ' + text + '\n\nPlease copy this manually.');
+            }
             
-            img.onerror = function() {
-                statusElement.innerHTML = '❌ Main server blocked. Use alternative access methods below.';
-                statusElement.style.color = '#ff6b6b';
-                
-                // Highlight alternative options
-                const rssButton = document.querySelector('.link-button[href*="rss.xml"]');
-                if (rssButton) {
-                    rssButton.style.background = 'rgba(255, 193, 7, 0.4)';
-                    rssButton.innerHTML = '📡 RSS Feed (Try This!)';
-                }
-            };
-            
-            // Test with a small image or favicon
-            img.src = 'https://mvgs.duckdns.org/favicon.ico?' + Date.now();
+            document.body.removeChild(textArea);
         }
         
-        // Run connection test after page loads
-        setTimeout(testConnection, 1000);
-        
-        // Disable auto-redirect if user interacts with page
-        document.addEventListener('click', () => {
-            clearTimeout(window.redirectTimer);
-        });
+        // No external connections or redirects
+        console.log('MVGS Podcast Access Portal loaded successfully');
+        console.log('No external connections made - work firewall safe');
     </script>
 </body>
 </html>

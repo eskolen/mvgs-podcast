@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MVGS Podcast - Work Access</title>
+    <meta name="description" content="Access MVGS Podcast from work networks">
+    
+    <!-- Immediate redirect for users -->
+    <script>
+        // Redirect to your actual podcast server
+        setTimeout(() => {
+            window.location.href = 'https://mvgs.duckdns.org/podcast/';
+        }, 3000);
+    </script>
+    
+    <!-- Fallback meta refresh -->
+    <meta http-equiv="refresh" content="5;url=https://mvgs.duckdns.org/podcast/">
+    
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.1);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .logo {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        
+        .title {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        
+        .subtitle {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .redirect-info {
+            background: rgba(255,255,255,0.2);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .manual-links {
+            margin: 30px 0;
+        }
+        
+        .link-button {
+            display: inline-block;
+            background: rgba(255,255,255,0.3);
+            color: white;
+            padding: 15px 30px;
+            margin: 10px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255,255,255,0.5);
+        }
+        
+        .link-button:hover {
+            background: rgba(255,255,255,0.5);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .rss-section {
+            background: rgba(255,255,255,0.15);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .rss-url {
+            background: rgba(255,255,255,0.2);
+            padding: 10px;
+            border-radius: 5px;
+            font-family: monospace;
+            word-break: break-all;
+            margin: 10px 0;
+            cursor: pointer;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        
+        .rss-url:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        
+        .loading {
+            font-size: 1.1em;
+            margin: 20px 0;
+        }
+        
+        .spinner {
+            border: 3px solid rgba(255,255,255,0.3);
+            border-top: 3px solid white;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .troubleshooting {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-size: 0.9em;
+        }
+        
+        .status-check {
+            margin: 20px 0;
+        }
+        
+        .status-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+            background: #ffeb3b;
+            animation: pulse 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes pulse {
+            from { opacity: 1; }
+            to { opacity: 0.5; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">🎧</div>
+        <h1 class="title">MVGS Podcast</h1>
+        <p class="subtitle">Work-Friendly Access Portal</p>
+        
+        <div class="redirect-info">
+            <div class="loading">
+                <div class="spinner"></div>
+                <strong>Redirecting to podcast...</strong>
+                <p>This page helps you access the MVGS Podcast from restricted networks.</p>
+            </div>
+        </div>
+        
+        <div class="status-check">
+            <p><span class="status-indicator"></span> Checking network accessibility...</p>
+            <p id="connection-status">Attempting connection to main server...</p>
+        </div>
+        
+        <div class="manual-links">
+            <h3>📱 Quick Access Links</h3>
+            <a href="https://mvgs.duckdns.org/podcast/" class="link-button" target="_blank">
+                🏠 Main Site
+            </a>
+            <a href="https://mvgs.duckdns.org/podcast/rss.xml" class="link-button" target="_blank">
+                📡 RSS Feed
+            </a>
+        </div>
+        
+        <div class="rss-section">
+            <h3>📻 Subscribe to Podcast</h3>
+            <p>Copy this RSS URL into your podcast app:</p>
+            <div class="rss-url" onclick="copyToClipboard(this)" title="Click to copy">
+                https://mvgs.duckdns.org/podcast/rss.xml
+            </div>
+            <p><small>Click the URL above to copy it</small></p>
+        </div>
+        
+        <div class="troubleshooting">
+            <h3>🔧 If Links Don't Work</h3>
+            <p><strong>Option 1:</strong> Try accessing from mobile data instead of work WiFi</p>
+            <p><strong>Option 2:</strong> Contact IT about accessing educational content</p>
+            <p><strong>Option 3:</strong> Use a different device/network</p>
+            <p><strong>Option 4:</strong> Download episodes when at home, listen offline at work</p>
+        </div>
+        
+        <div class="manual-links">
+            <h3>ℹ️ About This Service</h3>
+            <p>This is a mirror access point for the MVGS Podcast, designed to work from corporate and school networks that may block certain domain types.</p>
+        </div>
+    </div>
+    
+    <script>
+        function copyToClipboard(element) {
+            const text = element.textContent;
+            
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(text).then(() => {
+                    element.style.background = 'rgba(76, 175, 80, 0.3)';
+                    element.innerHTML = '✅ RSS URL Copied!';
+                    
+                    setTimeout(() => {
+                        element.style.background = 'rgba(255,255,255,0.2)';
+                        element.innerHTML = text;
+                    }, 2000);
+                });
+            } else {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = text;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                
+                element.style.background = 'rgba(76, 175, 80, 0.3)';
+                element.innerHTML = '✅ RSS URL Copied!';
+                
+                setTimeout(() => {
+                    element.style.background = 'rgba(255,255,255,0.2)';
+                    element.innerHTML = text;
+                }, 2000);
+            }
+        }
+        
+        // Test connection to main server
+        function testConnection() {
+            const statusElement = document.getElementById('connection-status');
+            
+            // Try to load an image from your server (small request)
+            const img = new Image();
+            img.onload = function() {
+                statusElement.innerHTML = '✅ Main server accessible! Redirecting...';
+                statusElement.style.color = '#4caf50';
+                
+                // If connection works, redirect faster
+                setTimeout(() => {
+                    window.location.href = 'https://mvgs.duckdns.org/podcast/';
+                }, 1000);
+            };
+            
+            img.onerror = function() {
+                statusElement.innerHTML = '❌ Main server blocked. Use manual links below.';
+                statusElement.style.color = '#ff6b6b';
+                
+                // Stop the spinner
+                document.querySelector('.spinner').style.display = 'none';
+                document.querySelector('.loading strong').innerHTML = 'Connection blocked - use manual access';
+            };
+            
+            // Test with a small image or favicon
+            img.src = 'https://mvgs.duckdns.org/favicon.ico?' + Date.now();
+        }
+        
+        // Run connection test after page loads
+        setTimeout(testConnection, 1000);
+        
+        // Disable auto-redirect if user interacts with page
+        document.addEventListener('click', () => {
+            clearTimeout(window.redirectTimer);
+        });
+    </script>
+</body>
+</html>
